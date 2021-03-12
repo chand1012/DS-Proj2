@@ -1,0 +1,27 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  test:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run Tests
+      run: |
+        echo "CPU INFO"
+        cat /proc/cpuinfo
+        echo "RUNNGING AND BUILDING TESTS"
+        mkdir build
+        cd build
+        cmake ..
+        make -j$(nproc)
+        make run
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Results
+        path: build/*.csv

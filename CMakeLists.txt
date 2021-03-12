@@ -14,4 +14,7 @@ endif()
 
 add_executable(main main.cpp)
 
+add_executable(karytest KAryTest.cpp)
+
 add_custom_target(run $<TARGET_FILE:main>)
+add_custom_target(runtest $<TARGET_FILE:karytest>)
