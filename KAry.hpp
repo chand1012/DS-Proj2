@@ -4,10 +4,12 @@
 #include <array>
 #include <memory>
 
+#define NODE_PTR std::shared_ptr<Node<T, K>>
+
 template <class T, uint K>
 struct Node {
     T value;
-    std::array<std::unique_ptr<Node>, K> children;
+    std::array<NODE_PTR, K> children;
     // struct constructor
     Node();
 };
@@ -15,7 +17,7 @@ struct Node {
 template <class T, uint K>
 class KAryTree {
     private:
-        std::unique_ptr<Node<T, K>> root = nullptr;
+        NODE_PTR root;
     public: 
         // constructor and destructor
         KAryTree();
@@ -23,15 +25,15 @@ class KAryTree {
         // inserts a node to the tree
         void insertNode(T input);
         // finds the root of the input
-        T findRootNode(T input);
-        // gets the number o
-        uint getNumberOfChildren(T input);
+        NODE_PTR findRootNode(T input);
         // combines two nodes
-        void unionNodes(T x, T y);
+        bool unionNodes(T x, T y);
         // removes the lowest node and returns the value
         T popNode();
         // removes the given node and returns if it was found
         bool removeNode(T input);
         // get the max number of nodes
         const uint maxNodes();
+        // print tree
+        void printTree();
 };
