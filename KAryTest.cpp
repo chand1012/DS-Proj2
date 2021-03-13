@@ -32,7 +32,6 @@ int main() {
         cout << "Starting the new loop!\n";
 
         for (uint i = 0; i < 100; ++i) {
-            cout << "just inserted " << i << endl << endl;
             othertree.insertNode(i);
         }
 
@@ -48,7 +47,6 @@ int main() {
         cout << "Starting the new loop!\n";
 
         for (uint i = 100; i > 0; --i) {
-            cout << "just inserted " << i << endl << endl;
             othertree.insertNode(i);
         }
 
@@ -64,7 +62,6 @@ int main() {
         cout << "Starting the new loop!\n";
 
         for (uint i = 0; i < 100; ++i) {
-            cout << "just inserted " << i << endl << endl;
             othertree.insertNode(i);
         }
 
