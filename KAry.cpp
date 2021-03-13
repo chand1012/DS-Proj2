@@ -48,7 +48,7 @@ void insertNewNode(NODE_PTR node, NODE_PTR newNode) {
     if (input > node->value) {
         // cout << "Input greater than value " << node->value << endl;
         // loops starting from the right child
-        for (uint i = K-1; i >= 0; --i) {
+        for (int i = K-1; i >= 0; --i) {
             // initialzes child node for comparisons
             NODE_PTR child = (node->children)[i];
             if (child == nullptr) {
@@ -84,7 +84,7 @@ void insertNewNode(NODE_PTR node, NODE_PTR newNode) {
     // if the input is less than or equal to node's value
     } else {
         // cout << "Input is less than or equal to node" << endl;
-        for (uint i = 0; i < K; ++i) {
+        for (int i = 0; i < K; ++i) {
             // initialzes child node for comparisons
             NODE_PTR child = (node->children)[i];
             if (child == nullptr) {
