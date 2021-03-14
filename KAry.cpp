@@ -20,23 +20,6 @@ Node<T, K>::Node() {
 template <class T, uint K>
 KAryTree<T, K>::KAryTree() {}
 
-// gets the number of children that the node has
-// template <class T, uint K>
-// uint KAryTree<T, K>::getNumberOfChildren(T input) {
-//     uint count = 0;
-//     for (uint i = 0; i < root.children.size(); ++i) {
-//         std::unique_ptr<T> item = root.children.at(i);
-//         if (item != nullptr) {
-//             ++count;
-//         }
-//     }
-//     return count;
-// }
-
-template <class T, uint K>
-std::unique_ptr<Node<T, K>> findRootNode(T input) {
-    
-}
 
 template <class T, uint K>
 void insertNewNode(NODE_PTR node, NODE_PTR newNode) {
@@ -48,7 +31,7 @@ void insertNewNode(NODE_PTR node, NODE_PTR newNode) {
     if (input > node->value) {
         // cout << "Input greater than value " << node->value << endl;
         // loops starting from the right child
-        for (int i = K-1; i >= 0; --i) {
+        for (uint i = K-1; i <= K-1; --i) {
             // initialzes child node for comparisons
             NODE_PTR child = (node->children)[i];
             if (child == nullptr) {
@@ -84,7 +67,7 @@ void insertNewNode(NODE_PTR node, NODE_PTR newNode) {
     // if the input is less than or equal to node's value
     } else {
         // cout << "Input is less than or equal to node" << endl;
-        for (int i = 0; i < K; ++i) {
+        for (uint i = 0; i < K; ++i) {
             // initialzes child node for comparisons
             NODE_PTR child = (node->children)[i];
             if (child == nullptr) {
@@ -131,9 +114,6 @@ void KAryTree<T, K>::insertNode(T input) {
 
     insertNewNode<T, K>(root, newNode);
 }
-// finds the root of the given node
-
-// combines two nodes
 
 // get the max number of nodes
 template <class T, uint K>

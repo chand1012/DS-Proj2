@@ -24,14 +24,6 @@ class KAryTree {
         ~KAryTree() {};
         // inserts a node to the tree
         void insertNode(T input);
-        // finds the root of the input
-        NODE_PTR findRootNode(T input);
-        // combines two nodes
-        bool unionNodes(T x, T y);
-        // removes the lowest node and returns the value
-        T popNode();
-        // removes the given node and returns if it was found
-        bool removeNode(T input);
         // get the max number of nodes
         const uint maxNodes();
         // print tree
